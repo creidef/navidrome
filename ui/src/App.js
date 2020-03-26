@@ -1,3 +1,4 @@
+import ReactGA from 'react-ga'
 import React from 'react'
 import { Admin, resolveBrowserLocale, Resource } from 'react-admin'
 import dataProvider from './dataProvider'
@@ -11,8 +12,15 @@ import user from './user'
 import song from './song'
 import album from './album'
 import artist from './artist'
+import playlist from './playlist'
 import { createMuiTheme } from '@material-ui/core/styles'
 import { Player, playQueueReducer } from './audioplayer'
+
+const trackingId = 'UA-115766803-3'
+ReactGA.initialize(trackingId)
+ReactGA.set({
+  userId: authProvider.user
+})
 
 const theme = createMuiTheme(DarkTheme)
 
@@ -45,6 +53,7 @@ const App = () => {
         <Resource name="artist" {...artist} options={{ subMenu: 'library' }} />,
         <Resource name="album" {...album} options={{ subMenu: 'library' }} />,
         <Resource name="song" {...song} options={{ subMenu: 'library' }} />,
+        <Resource name="playlist" {...playlist} options={{ subMenu: 'library' }} />,
         <Resource name="albumSong" />,
         permissions === 'admin' ? (
           <Resource name="user" {...user} options={{ subMenu: 'settings' }} />

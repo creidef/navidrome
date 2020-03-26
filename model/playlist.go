@@ -1,7 +1,7 @@
 package model
 
 type Playlist struct {
-	ID       string
+	ID       string `json:"id"          orm:"column(id)"`
 	Name     string
 	Comment  string
 	Duration float32

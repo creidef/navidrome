@@ -20,7 +20,8 @@ const Player = () => {
     preload: true,
     autoPlayInitLoadPlayList: true,
     clearPriorAudioLists: false,
-    showDestroy: false,
+    showDestroy: false, 
+    extendsContent: [],   
     showDownload: false,
     showReload: false,
     glassBg: false,
@@ -76,14 +77,22 @@ const Player = () => {
     }
   }
 
+  const extendsContent = [
+        <button onClick={() => alert("I'm extends content")}>save playlist</button>                
+  ]
+
   if (authenticated && options.audioLists.length > 0) {
-    return (
-      <ReactJkMusicPlayer
-        {...options}
-        onAudioListsChange={OnAudioListsChange}
-        onAudioProgress={OnAudioProgress}
-        onAudioPlay={OnAudioPlay}
-      />
+    return (      
+      <>         
+        <ReactJkMusicPlayer
+          {...options}
+          extendsContent={extendsContent}
+          onAudioListsChange={OnAudioListsChange}
+          onAudioProgress={OnAudioProgress}
+          onAudioPlay={OnAudioPlay}
+        />
+        
+      </>
     )
   }
   return <div />

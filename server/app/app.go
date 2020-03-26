@@ -40,6 +40,7 @@ func (app *Router) routes() http.Handler {
 		r.Use(jwtauth.Verifier(auth.TokenAuth))
 		r.Use(Authenticator(app.ds))
 		app.R(r, "/user", model.User{})
+		app.R(r, "/playlist", model.Playlist{})
 		app.R(r, "/song", model.MediaFile{})
 		app.R(r, "/album", model.Album{})
 		app.R(r, "/artist", model.Artist{})

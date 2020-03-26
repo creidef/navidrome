@@ -14,17 +14,17 @@ import (
 
 type nd struct {
 	Port           string `default:"4533"`
-	MusicFolder    string `default:"./music"`
+	MusicFolder    string `default:"/home/creidef/Music"`
 	DataFolder     string `default:"./"`
 	ScanInterval   string `default:"1m"`
 	DbPath         string ``
 	LogLevel       string `default:"info"`
-	SessionTimeout string `default:"30m"`
+	SessionTimeout string `default:"240m"`
 
 	IgnoredArticles string `default:"The El La Los Las Le Les Os As O A"`
 	IndexGroups     string `default:"A B C D E F G H I J K L M N O P Q R S T U V W X-Z(XYZ) [Unknown]([)"`
 
-	TranscodingCacheSize string `default:"100MB"` // in MB
+	TranscodingCacheSize string `default:"1000MB"` // in MB
 	ProbeCommand         string `default:"ffmpeg -i %s -f ffmetadata"`
 
 	// DevFlags. These are used to enable/disable debugging and incomplete features

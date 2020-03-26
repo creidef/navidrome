@@ -13,14 +13,14 @@ const (
 
 	JWTSecretKey          = "JWTSecret"
 	JWTIssuer             = "ND"
-	DefaultSessionTimeout = 30 * time.Minute
+	DefaultSessionTimeout = 240 * time.Minute
 
 	UIAssetsLocalPath = "ui/build"
 
 	CacheDir                             = "cache"
-	DefaultTranscodingCacheSize          = 100 * 1024 * 1024 // 100MB
-	DefaultTranscodingCacheMaxItems      = 0                 // Unlimited
-	DefaultTranscodingCachePurgeInterval = 10 * time.Minute
+	DefaultTranscodingCacheSize          = 10 * 100 * 1024 * 1024 // 1000MB
+	DefaultTranscodingCacheMaxItems      = 0                      // Unlimited
+	DefaultTranscodingCachePurgeInterval = 30 * time.Minute
 
 	DevInitialUserName = "admin"
 	DevInitialName     = "Dev Admin"

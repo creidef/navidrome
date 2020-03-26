@@ -88,7 +88,7 @@ const FormLogin = ({ loading, handleSubmit, validate }) => {
                   <LockIcon />
                 </Avatar>
               </div>
-              <div className={classes.systemName}>Navidrome</div>
+              <div className={classes.systemName}>CreideF's Music Jukebox</div>
               <div className={classes.form}>
                 <div className={classes.input}>
                   <Field

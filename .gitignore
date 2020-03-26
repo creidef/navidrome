@@ -20,3 +20,4 @@ navidrome.db
 dist
 music
 docker-compose.override.yml
+__debug_bin

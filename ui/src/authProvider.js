@@ -1,5 +1,6 @@
 import jwtDecode from 'jwt-decode'
 import md5 from 'md5-hex'
+import ReactGA from 'react-ga'
 
 const authProvider = {
   login: ({ username, password }) => {
@@ -17,6 +18,10 @@ const authProvider = {
         if (response.status < 200 || response.status >= 300) {
           throw new Error(response.statusText)
         }
+        ReactGA.event({
+          category: 'Sign Up',
+          action: 'User pressed the big blue sign up button ' + username + new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit'}).format(Date.now())
+        })
         return response.json()
       })
       .then((response) => {
